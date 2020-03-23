@@ -23,6 +23,14 @@ window.addEventListener('keyup', function (e) {
 		const currTop = extractPos(avatar.style.top);
 		avatar.style.top = `${currTop - 50}px`;
 	}
+	else if (e.key === "ArrowRight" || e.key === "Right") {
+		const currLeft = extractPos(avatar.style.left);
+		avatar.style.left = `${currLeft + 50}px`;
+	}
+	else if (e.key === "ArrowLeft" || e.key === "Left") {
+		const currLeft = extractPos(avatar.style.left);
+		avatar.style.left = `${currLeft - 50}px`;
+	}
 });
 
 const extractPos = (pos) => {
