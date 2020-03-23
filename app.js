@@ -14,8 +14,15 @@ function isTouching(a, b) {
 const avatar = document.querySelector('#player');
 
 window.addEventListener('keyup', function (e) {
-	const currTop = extractPos(avatar.style.top);
-	avatar.style.top = `${currTop + 50}px`;
+	/// make it IE compatible, check for Down key(no ArrowDown in IE )
+	if (e.key === "ArrowDown" || e.key === "Down") {
+		const currTop = extractPos(avatar.style.top);
+		avatar.style.top = `${currTop + 50}px`;
+	}
+	else if (e.key === "ArrowUp" || e.key === "Up") {
+		const currTop = extractPos(avatar.style.top);
+		avatar.style.top = `${currTop - 50}px`;
+	}
 });
 
 const extractPos = (pos) => {
