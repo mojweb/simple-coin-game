@@ -26,10 +26,12 @@ window.addEventListener('keyup', function (e) {
 	else if (e.key === "ArrowRight" || e.key === "Right") {
 		const currLeft = extractPos(avatar.style.left);
 		avatar.style.left = `${currLeft + 50}px`;
+		avatar.style.transform = 'scale(1,1)';
 	}
 	else if (e.key === "ArrowLeft" || e.key === "Left") {
 		const currLeft = extractPos(avatar.style.left);
 		avatar.style.left = `${currLeft - 50}px`;
+		avatar.style.transform = 'scale(-1,1)';
 	}
 });
 
